@@ -6,7 +6,10 @@ import flask_graphql
 from flask import Flask, Blueprint, url_for
 from flask_graphql import GraphQLView
 
-from schema import schema
+try:
+    from . import schema
+except:
+    import schema
 
 SAMPLE_QUERY = '''
 {
